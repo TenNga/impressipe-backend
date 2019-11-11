@@ -3,7 +3,7 @@ class RecipeSerializer < ActiveModel::Serializer
   has_many :steps, serializer: StepSerializer
   
   def ingredients
-    ActiveModel::SerializableResource.new(object.ingredients.uniq{|ingredient|ingredient.name},  each_serializer: IngredientSerializer)
+    ActiveModel::SerializableResource.new(object.recipe_ingredients.uniq{|rec_ing|rec_ing.ingredient.name},  each_serializer: RecipeIngredientSerializer)
   end
   
   def equipment
