@@ -1,7 +1,7 @@
 class RecipeSerializer < ActiveModel::Serializer
   attributes :id, :name, :serves, :veg, :vegan, :dairy_free, :gluten_free, :keto, :image_url, :healthy, :time_in_minute, :equipment, :ingredients
   has_many :steps, serializer: StepSerializer
-  has_many :comments
+  has_many :comments, serializer: CommentSerializer
   
   def ingredients
     ActiveModel::SerializableResource.new(object.recipe_ingredients.uniq{|rec_ing|rec_ing.ingredient.name},  each_serializer: RecipeIngredientSerializer)
