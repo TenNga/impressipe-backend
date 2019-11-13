@@ -17,7 +17,7 @@ Equipment.destroy_all
 StepEquipment.destroy_all
 
 url = "https://api.spoonacular.com/recipes"
-random = "/random?number=12"
+random = "/random?number=10"
 analyzed_instructions = "/analyzedInstructions"
 key = "apiKey=c25665a0759d40ffb38e875f1638e2d3"
 

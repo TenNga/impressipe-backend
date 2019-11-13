@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :ingredients
       resources :steps
       resources :equipments
+      resources :comments
     end
   end
 end
