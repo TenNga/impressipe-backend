@@ -51,7 +51,8 @@ arr.each do |el|
     end
 
 
-    recipes.each do |recipe| 
+    recipes.each do |recipe|
+        puts recipe.without(:ingredients)
         Recipe.create(recipe.without(:ingredients))
         recipe_id = Recipe.all.find{|rec| rec.name == recipe[:name]}.id
 
