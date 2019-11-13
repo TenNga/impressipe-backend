@@ -17,7 +17,7 @@ Equipment.destroy_all
 StepEquipment.destroy_all
 
 url = "https://api.spoonacular.com/recipes"
-random = "/random?number=1"
+random = "/random?number=12"
 analyzed_instructions = "/analyzedInstructions"
 key = "apiKey=c25665a0759d40ffb38e875f1638e2d3"
 
@@ -51,7 +51,8 @@ arr.each do |el|
     end
 
 
-    recipes.each do |recipe| 
+    recipes.each do |recipe|
+        puts recipe.without(:ingredients)
         Recipe.create(recipe.without(:ingredients))
         recipe_id = Recipe.all.find{|rec| rec.name == recipe[:name]}.id
 
